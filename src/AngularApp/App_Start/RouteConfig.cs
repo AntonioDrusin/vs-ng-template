@@ -4,12 +4,11 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace App.Web1
+using System.Web.Routing;
+using AngularApp.Routing;
+
+namespace AngularApp
 {
-    using System.Web.Routing;
-
-    using App.Web1.Routing;
-
     public class RouteConfig
     {
         public static void RegisterRoutes(RouteCollection routes)

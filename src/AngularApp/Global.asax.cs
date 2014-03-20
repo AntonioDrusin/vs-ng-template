@@ -4,12 +4,12 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace App.Web1
-{
-    using System.Web;
-    using System.Web.Optimization;
-    using System.Web.Routing;
+using System.Web;
+using System.Web.Optimization;
+using System.Web.Routing;
 
+namespace AngularApp
+{
     public class Application : HttpApplication
     {
         protected void Application_Start()

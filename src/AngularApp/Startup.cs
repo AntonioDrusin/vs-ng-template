@@ -4,12 +4,14 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
-[assembly: Microsoft.Owin.OwinStartup(typeof(App.Web1.Startup))]
+using AngularApp;
+using Microsoft.Owin;
+using Owin;
 
-namespace App.Web1
+[assembly: OwinStartup(typeof (Startup))]
+
+namespace AngularApp
 {
-    using Owin;
-
     public partial class Startup
     {
         public void Configuration(IAppBuilder app)
@@ -17,7 +19,7 @@ namespace App.Web1
             //// For more information on how to configure your application, visit:
             //// http://go.microsoft.com/fwlink/?LinkID=316888
 
-            this.ConfigureAuth(app);
+            ConfigureAuth(app);
         }
     }
 }
