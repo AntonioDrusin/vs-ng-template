@@ -16,21 +16,21 @@ namespace AngularApp.Routing
         public IHttpHandler GetHttpHandler(RequestContext requestContext)
         {
             // Use cases:
-            //     ~/            -> ~/views/index.cshtml
-            //     ~/about       -> ~/views/about.cshtml or ~/views/about/index.cshtml
-            //     ~/views/about -> ~/views/about.cshtml
-            //     ~/xxx         -> ~/views/404.cshtml
+            //     ~/            -> ~/app/index.cshtml
+            //     ~/about       -> ~/app/about.cshtml or ~/app/about/index.cshtml
+            //     ~/views/about -> ~/app/about.cshtml
+            //     ~/xxx         -> ~/app/404.cshtml
             string filePath = requestContext.HttpContext.Request.AppRelativeCurrentExecutionFilePath;
 
             if (filePath == "~/")
             {
-                filePath = "~/views/index.cshtml";
+                filePath = "~/app/index.cshtml";
             }
             else
             {
-                if (!filePath.StartsWith("~/views/", StringComparison.OrdinalIgnoreCase))
+                if (!filePath.StartsWith("~/app/", StringComparison.OrdinalIgnoreCase))
                 {
-                    filePath = filePath.Insert(2, "views/");
+                    filePath = filePath.Insert(2, "app/");
                 }
 
                 if (!filePath.EndsWith(".cshtml", StringComparison.OrdinalIgnoreCase))
@@ -44,8 +44,8 @@ namespace AngularApp.Routing
 
             if (handler == null)
             {
-                requestContext.RouteData.DataTokens.Add("templateUrl", "/views/404");
-                handler = WebPageHttpHandler.CreateFromVirtualPath("~/views/404.cshtml");
+                requestContext.RouteData.DataTokens.Add("templateUrl", "/app/404/404");
+                handler = WebPageHttpHandler.CreateFromVirtualPath("~/app/404/404.cshtml");
             }
             else
             {

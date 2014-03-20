@@ -15,15 +15,17 @@ namespace AngularApp
         {
             bundles.Add(new StyleBundle("~/content/css/app").Include("~/app/app.css"));
 
-            bundles.Add(new ScriptBundle("~/js/jquery").Include("~/scripts/vendor/jquery-{version}.js"));
 
-            bundles.Add(new ScriptBundle("~/js/app").Include(
-                "~/scripts/vendor/angular-ui-router.js",
-                "~/scripts/filters.js",
-                "~/scripts/services.js",
-                "~/scripts/directives.js",
-                "~/scripts/controllers.js",
-                "~/scripts/app.js"));
+                    //<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+            bundles.Add(new ScriptBundle("~/js/app")
+                .Include("~/vendor/script/jquery-{version}.js")
+                .Include("~/vendor/script/angular.js")
+                .Include("~/vendor/script/angular-ui-router.js")
+                .IncludeDirectory("~/app/", "*.js", true)
+            );
+
+            bundles.IgnoreList.Ignore("*.spec.js");
         }
     }
 }
