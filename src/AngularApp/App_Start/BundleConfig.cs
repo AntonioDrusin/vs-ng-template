@@ -14,7 +14,7 @@ namespace App.Web1
         // For more information on bundling, visit http://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
-            bundles.Add(new StyleBundle("~/content/css/app").Include("~/content/app.css"));
+            bundles.Add(new StyleBundle("~/content/css/app").Include("~/app/app.css"));
 
             bundles.Add(new ScriptBundle("~/js/jquery").Include("~/scripts/vendor/jquery-{version}.js"));
 
@@ -23,7 +23,7 @@ namespace App.Web1
                 "~/scripts/filters.js",
                 "~/scripts/services.js",
                 "~/scripts/directives.js",
-                "~/scripts/controllers/controllers.js",
+                "~/scripts/controllers.js",
                 "~/scripts/app.js"));
         }
     }

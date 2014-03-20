@@ -7,6 +7,7 @@
     <meta name="description" content="@PageData["description"]">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     @Styles.Render("~/content/css/app")
+    <base href="~/"/>
 </head>
 <body>
     <!--[if lt IE 9]>
@@ -27,15 +28,15 @@
             <nav class="collapse navbar-collapse spa-navbar-collapse" role="navigation">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="./about">About</a>
+                        <a href="~/about">About</a>
                     </li>
                     <li>
-                        <a href="./contacts">Contacts</a>
+                        <a href="~/contacts">Contacts</a>
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="./login">Sign In</a>
+                        <a href="~/login">Sign In</a>
                     </li>
                 </ul>
             </nav>
