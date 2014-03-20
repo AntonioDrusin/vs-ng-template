@@ -23,7 +23,7 @@ namespace App.Web1
                 "~/scripts/filters.js",
                 "~/scripts/services.js",
                 "~/scripts/directives.js",
-                "~/scripts/controllers.js",
+                "~/scripts/controllers/controllers.js",
                 "~/scripts/app.js"));
         }
     }

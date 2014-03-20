@@ -14,7 +14,7 @@
     <RootNamespace>App.Web1</RootNamespace>
     <AssemblyName>App.Web1</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -136,19 +136,15 @@
     <Content Include="Global.asax" />
     <Content Include="Scripts\controllers\controllers.js" />
     <Content Include="Scripts\controllers\controllers.spec.js">
-      <DependentUpon>controllers.js</DependentUpon>
     </Content>
     <Content Include="Scripts\directives.js" />
     <Content Include="Scripts\directives.spec.js">
-      <DependentUpon>directives.js</DependentUpon>
     </Content>
     <Content Include="Scripts\filters.js" />
     <Content Include="Scripts\filters.spec.js">
-      <DependentUpon>filters.js</DependentUpon>
     </Content>
     <Content Include="Scripts\services.js" />
     <Content Include="Scripts\services.spec.js">
-      <DependentUpon>services.js</DependentUpon>
     </Content>
     <Content Include="Scripts\vendor\angular-csp.css" />
     <Content Include="Scripts\vendor\angular-ui-router.js" />
@@ -471,6 +467,9 @@
     <Content Include="Content\bootstrap\bootstrap.less" />
     <Content Include="Content\bootstrap\badges.less" />
     <Content Include="Content\bootstrap\alerts.less" />
+    <Content Include="Content\app.css.map">
+      <DependentUpon>app.css</DependentUpon>
+    </Content>
     <None Include="Scripts\vendor\jquery-2.0.3.intellisense.js" />
     <Content Include="Scripts\vendor\jquery-2.0.3.js" />
     <Content Include="Scripts\vendor\jquery-2.0.3.min.js" />
@@ -515,6 +514,7 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="app\" />
     <Folder Include="Images\" />
     <Folder Include="Views\Shared\" />
   </ItemGroup>
@@ -536,7 +536,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>8080</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:8080/</IISUrl>
+          <IISUrl>http://localhost/AngularApp</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
