@@ -1,5 +1,6 @@
 ﻿/// <reference path="/app/_references.js" />
-/// <reference path="app-version-directives.js" />
+/// <reference path="app-version-directive.js" />
+/// <reference path="/vendor/scripts/jasmine.js" />
 'use strict';
 
 describe('Directives', function() {

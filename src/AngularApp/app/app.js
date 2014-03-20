@@ -1,5 +1,11 @@
 ﻿'use strict';
 
+angular.module('app.controllers', []);
+angular.module('app.directives', []);
+angular.module('app.filters', []);
+angular.module('app.services', []);
+
+
 // Declares how the application should be bootstrapped. See: http://docs.angularjs.org/guide/module
 angular.module('app', ['ui.router', 'app.filters', 'app.services', 'app.directives', 'app.controllers'])
 

@@ -10,22 +10,38 @@ namespace AngularApp
 {
     public class BundleConfig
     {
-        // For more information on bundling, visit http://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new StyleBundle("~/content/css/app").Include("~/app/app.css"));
 
-
-                    //<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
             bundles.Add(new ScriptBundle("~/js/app")
-                .Include("~/vendor/script/jquery-{version}.js")
-                .Include("~/vendor/script/angular.js")
-                .Include("~/vendor/script/angular-ui-router.js")
-                .IncludeDirectory("~/app/", "*.js", true)
+                .Include("~/vendor/scripts/jquery-{version}.js")
+                .Include("~/vendor/scripts/angular.js")
+                .Include("~/vendor/scripts/angular-ui-router.js")
+                .IncludeDirectory("~/app/", "app.js", true)
+                .IncludeDirectory("~/app/", "*-service.js", true)
+                .IncludeDirectory("~/app/", "*-directive.js", true)
+                .IncludeDirectory("~/app/", "*-filter.js", true)
+                .IncludeDirectory("~/app/", "*-controller.js", true)
             );
 
-            bundles.IgnoreList.Ignore("*.spec.js");
+            bundles.Add(new ScriptBundle("~/js/testapp")
+                .Include("~/vendor/scripts/jquery-{version}.js")
+                .Include("~/vendor/scripts/angular.js")
+                .Include("~/vendor/scripts/angular-mocks.js")
+                .Include("~/vendor/scripts/angular-ui-router.js")
+                .IncludeDirectory("~/app/", "app.js", true)
+                .IncludeDirectory("~/app/", "*-service.js", true)
+                .IncludeDirectory("~/app/", "*-directive.js", true)
+                .IncludeDirectory("~/app/", "*-filter.js", true)
+                .IncludeDirectory("~/app/", "*-controller.js", true)
+            );
+
+            bundles.Add(new ScriptBundle("~/js/specs")
+                .IncludeDirectory("~/app/", "*.spec.js", true)
+                );
+
+
         }
     }
 }
