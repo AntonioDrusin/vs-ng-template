@@ -9,7 +9,7 @@
     "disallowKeywords": ["with"],
     "disallowMultipleLineBreaks": true,
     "disallowKeywordsOnNewLine": ["else"],
-    "excludeFiles": ["**"],
+    "excludeFiles": [],
     "validateJSDoc": {
         "checkParamNames": true,
         "requireParamTypes": true

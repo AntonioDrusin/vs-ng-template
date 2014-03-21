@@ -35,7 +35,7 @@ namespace AngularApp.Routing
 
                 if (!filePath.EndsWith(".cshtml", StringComparison.OrdinalIgnoreCase))
                 {
-                    filePath = filePath += ".cshtml";
+                    filePath += ".cshtml";
                 }
             }
 
