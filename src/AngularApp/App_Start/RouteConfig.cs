@@ -4,6 +4,7 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
+using System.Web.Mvc;
 using System.Web.Routing;
 using AngularApp.Routing;
 
@@ -13,6 +14,7 @@ namespace AngularApp
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
+
             routes.Add("Default", new DefaultRoute());
         }
     }

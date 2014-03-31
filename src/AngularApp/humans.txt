@@ -11,5 +11,6 @@
 
 # TECHNOLOGY COLOPHON
 
+    Castle Windsor,
     HTML5, CSS3
     AngularJS, jQuery, Bootstrap
