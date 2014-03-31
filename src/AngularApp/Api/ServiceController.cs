@@ -4,22 +4,30 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
-using System.Diagnostics;
 using System.Web.Http;
+using AngularApp.Concerns;
 
 namespace AngularApp.Api
 {
     public class ServiceController : ApiController
     {
-        // GET api/service
-        public ServiceInformation Get(string name)
+
+        private readonly IStore<ServiceInformation> _store;
+
+        public ServiceController(IStore<ServiceInformation> store)
         {
-            return new ServiceInformation {Name = string.Format("Hello, {0}", name)};
+            _store = store;
+        }
+
+        // GET api/service
+        public ServiceInformation Get()
+        {
+            return _store.Get();
         }
 
         public void Post(ServiceInformation data)
         {
-            Debug.Print(data.Name);
+            _store.Put(data);
         }
     }
 }

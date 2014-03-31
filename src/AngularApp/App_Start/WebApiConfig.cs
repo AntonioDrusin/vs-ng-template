@@ -1,5 +1,10 @@
-﻿using System.Net.Http.Formatting;
+﻿using System;
+using System.Collections.Generic;
+using System.Net.Http.Formatting;
 using System.Web.Http;
+using System.Web.Http.Dependencies;
+using System.Web.Http.Dispatcher;
+using AngularApp.Routing;
 using Newtonsoft.Json.Serialization;
 
 namespace AngularApp
@@ -20,7 +25,7 @@ namespace AngularApp
 
             // Use camel case for JSON data.
             config.Formatters.JsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
-
+            
             // Web API routes
             config.MapHttpAttributeRoutes();
 

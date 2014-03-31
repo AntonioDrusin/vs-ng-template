@@ -1,8 +1,18 @@
-﻿using System;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="DefaultRouteHandler.cs" company="">
+//   Copyright © 2014 
+// </copyright>
+// --------------------------------------------------------------------------------------------------------------------
+
+using System;
+using System.Net.Http;
 using System.Web;
+using System.Web.Http.Controllers;
+using System.Web.Http.Dispatcher;
 using System.Web.Mvc;
 using System.Web.Routing;
 using Castle.MicroKernel;
+using Castle.Windsor;
 
 namespace AngularApp.Routing
 {
@@ -24,9 +34,53 @@ namespace AngularApp.Routing
         {
             if (controllerType == null)
             {
-                throw new HttpException(404, string.Format("The controller for path '{0}' could not be found.", requestContext.HttpContext.Request.Path));
+                throw new HttpException(404,
+                    string.Format("The controller for path '{0}' could not be found.",
+                        requestContext.HttpContext.Request.Path));
             }
-            return (IController)_kernel.Resolve(controllerType);
+            return (IController) _kernel.Resolve(controllerType);
+                        
+        }
+    }
+
+    public class WindsorControllerActivator : IHttpControllerActivator
+    {
+        private readonly IWindsorContainer _container;
+
+        public WindsorControllerActivator(IWindsorContainer container)
+        {
+            _container = container;
+        }
+
+        public IHttpController Create(
+            HttpRequestMessage request,
+            HttpControllerDescriptor controllerDescriptor,
+            Type controllerType)
+        {
+            var controller =
+                (IHttpController)this._container.Resolve(controllerType);
+
+            request.RegisterForDispose(
+                new Release(
+                    () => this._container.Release(controller)));
+
+            return controller;
+        }
+
+        private class Release : IDisposable
+        {
+            private readonly Action _release;
+
+            public Release(Action release)
+            {
+                _release = release;
+            }
+
+            public void Dispose()
+            {
+
+                _release();
+            }
         }
     }
 }
