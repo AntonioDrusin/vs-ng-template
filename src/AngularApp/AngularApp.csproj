@@ -508,10 +508,6 @@
     <Content Include=".jscsrc" />
     <Content Include=".jshintrc" />
     <Content Include=".jshintignore" />
-    <None Include="vendor\scripts\jquery-2.0.3.intellisense.js" />
-    <Content Include="vendor\scripts\jquery-2.0.3.js" />
-    <Content Include="vendor\scripts\jquery-2.0.3.min.js" />
-    <Content Include="vendor\scripts\jquery-2.0.3.min.map" />
     <None Include="app\_references.js" />
     <Content Include="app\app.js" />
     <Content Include="jasmine\SpecRunner.cshtml" />
