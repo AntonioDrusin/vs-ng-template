@@ -9,7 +9,6 @@ Requirements
 ------------
 
  [Web Essentials 2013](http://vswebessentials.com/download)
-I had issues with the current version of Web Essentials ignoring my exclude list. I had to upgrade to VS2013 Update 2 and [Web Essentials Nightly Builds](http://madskristensen.net/post/web-essentials-nightly-builds)
 
 Scope
 -----
